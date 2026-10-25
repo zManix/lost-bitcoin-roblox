@@ -1,3 +1,5 @@
+> **REJECTED (v2).** An adversarial review found 6 existing junk→worker-robot games, all under 650 live players, plus too many systems. Superseded by `HAUL_AND_HATCH_RESEARCH_AND_VERDICT.md`. Kept for the record.
+
 # FORGE A BOT: research, freshness check, verdict
 
 Date: 2026-10-25. This replaces the 6/10 "Scrap to Riches" idea.
