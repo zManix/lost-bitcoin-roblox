@@ -1,3 +1,5 @@
+> **SUPERSEDED (v1), do not build.** Use `SCRAP_A_JUNKYARD_ONE_SHOT_PROMPT.md`.
+
 ````
 # ONE-SHOT BUILD PROMPT — "SCRAP TO RICHES" (Roblox)
 

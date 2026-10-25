@@ -1,3 +1,5 @@
+> **REJECTED (v3), do not build.** Use `SCRAP_A_JUNKYARD_ONE_SHOT_PROMPT.md`.
+
 ````
 # ONE-SHOT BUILD PROMPT — "HAUL & HATCH" (Roblox)
 

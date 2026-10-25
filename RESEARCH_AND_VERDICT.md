@@ -1,3 +1,5 @@
+> **SUPERSEDED (v1).** A straight Lost Bitcoin port already exists on Roblox and is dead (Clear the Junkyard: 2 live; Find The Lost Bitcoin). See `SCRAP_A_JUNKYARD_RESEARCH_AND_VERDICT.md`.
+
 # Lost Bitcoin → Roblox: Dossier + Verdict
 
 Researched 2026-10-25. Build prompt: `SCRAP_TO_RICHES_ONE_SHOT_PROMPT.md`.

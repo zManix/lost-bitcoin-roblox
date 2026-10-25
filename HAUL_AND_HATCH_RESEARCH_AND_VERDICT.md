@@ -1,3 +1,5 @@
+> **REJECTED (v3).** The 2nd adversarial review found the team-carry twist already live (Steal Eggs Together: "carry GIANT and TITAN eggs together", 1.1K live) and a crowded "X for Eggs" strength-sim lane. Superseded by `SCRAP_A_JUNKYARD_RESEARCH_AND_VERDICT.md`.
+
 # HAUL & HATCH: final concept, research and verdict
 
 Date: 2026-10-25. This is concept v3.
