@@ -98,8 +98,9 @@ their ghosts drifting through the rock. Race them, or just relax."
   (Voronoi) texture, emissive glow, a PointLight, a slow bob and a hum.
 - **Tokens:** cream discs with a thin olive ink rim, emissive; they pop, hover 0.15 s, then swoop into you. Pool 300;
   above that, merge into bigger "x5" discs.
-- **Lighting:** Technology Future (ShadowMap on Low). Bloom Intensity 0.9, Threshold 0.85, Size 28. No sky inside the
-  cube (it's dark; lamps light it). Hall: a soft DepthOfField.
+- **Lighting:** `Lighting.Technology` is deprecated. Use `LightingStyle = Soft` (+ PrioritizeLightingQuality on High
+  preset), EnvironmentDiffuseScale 0–0.3, EnvironmentSpecularScale 0. Bloom Intensity 0.9, Threshold 0.85, Size 28. No
+  sky inside the cube (it's dark; lamps light it). Hall: a soft DepthOfField.
 - **UI style:** near-black teal panels (#0E1A1C, 88%) with 1 px gold rims (#E8B45A at 50%). Titles in a thin,
   wide-tracked geometric caps font (Roblox: Montserrat Light / Gotham; LetterSpacing via spaces if needed); body text
   in a clean sans. Cream text #F2E6D0. Gold pills for selected filters; a cyan pill (#5BE0F0) for the active mode.

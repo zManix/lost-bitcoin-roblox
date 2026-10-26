@@ -23,10 +23,10 @@ Source: a research pass on 2026-10-26 (Roblox docs, staff posts, community).
    - Budget: ≤ 3,000 block parts on phones [EST]. Fallbacks if phone tests fail: hide chunks beyond 160 studs,
      re-merge old dug regions.
    - **Look on merged boxes:**
-     - Put `Texture` instances only on faces that touch air (not on hidden faces).
-     - StudsPerTileU/V = 16 with a 4×4-block tile image, so the 4-stud seams and the per-block ±6% brightness variation
-       are baked into the image. Set OffsetStudsU/V from the world position so seams line up across boxes [TEST].
-     - Each band is a different tint (Texture.Color3) + a different image.
+     - PRIMARY: one MaterialVariant per band, StudsPerTile 16, using a 1024² image of a 4×4 block grid with the seams
+       and the ±6% per-block variation baked in. MaterialVariants batch; Texture instances don't.
+     - FALLBACK if tiling doesn't line up across merged boxes [TEST]: Texture instances on air-facing faces only,
+       StudsPerTileU/V 16, with OffsetStudsU/V from the world position.
      - Lamps are tiny separate parts (a disc + a PointLight) placed on air-facing faces of seeded "lamp cells".
 4. **Digging:**
    - The client aims with a DDA ray through ITS OWN GRID (not a physics raycast) and removes the block locally at once.
