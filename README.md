@@ -1,6 +1,8 @@
 # Lost Bitcoin → Roblox research
 
-**FINAL:** `SCRAP_A_JUNKYARD_ONE_SHOT_PROMPT.md` (paste this into the build agent) · Why: `SCRAP_A_JUNKYARD_RESEARCH_AND_VERDICT.md`
+**NEW (2026-10-26): `glowing_box_kit/`**: Find the Glowing Box (Find The Box → Roblox). Start with `glowing_box_kit/VERDICT.md`.
+
+Previous final: `SCRAP_A_JUNKYARD_ONE_SHOT_PROMPT.md` (paste this into the build agent) · Why: `SCRAP_A_JUNKYARD_RESEARCH_AND_VERDICT.md`
 
 | Version | Concept | Status |
 |---|---|---|
