@@ -29,6 +29,10 @@ Start from the source game. Then:
 | Mobile / perf | Feasible on 2 GB Android phones (80% of players are on mobile) |
 | Honesty / policy | No paid random items, odds shown, nothing pay-to-win against players |
 
+Total = weighted average, rounded to 0.5: Lane demand ×2, Competition ×1.5, 28-day retention ×1.5, every other factor
+×1 (divide by 10). Then adjust by at most ±0.5 with a one-line reason, and also state a realistic range (e.g.
+"6.8, realistically 6–7").
+
 Be honest. NEVER promise a 10/10 on paper: launch results depend on execution, weekly updates and thumbnails. When the
 user asks for a 10, explain what turns the paper score into a real result (ship fast, update every Saturday, juice,
 thumbnail testing).
@@ -48,6 +52,11 @@ Spawn a fresh general-purpose subagent (it must NOT see your reasoning, only the
    by the data, name it and justify it with numbers.
 Final message ≤ 900 words with the close-match table."
 
+No subagent tool available? Then do the review yourself as a deliberately separate HOSTILE PASS: re-read only the
+three files (not your notes), run 40+ NEW searches (different words than Phase 2, especially family 6), argue against
+your own concept, and label the round "self-review (not independent)" in VERDICT.md. If a remote-session tool exists
+(e.g. create_session), you may use it instead, but it needs the files copied in.
+
 Then:
 - **VERIFY its claims yourself** (run `details` on its top matches). Reviewers can be wrong; so can you.
 - If it finds the twist already shipped and dead, or a much better lane, pivot (§1) and run ONE more review round.
@@ -61,6 +70,7 @@ Then:
 - Give 5 options and pick one.
 
 ## 5. VERDICT.md template
+Example of an honest verdict with review rounds: references/examples/example_VERDICT_dome_keeper.md.
 1. One-line pitch
 2. What the source game is (3 lines)
 3. The evidence table (part → proven by → numbers)

@@ -2,7 +2,8 @@
 """Study gameplay videos from YouTube with yt-dlp, for private reference (Claude reads frames + captions).
 
 Subcommands:
-  search "query" [--n 15]                      -> id | title | channel | seconds | views
+  search "query" [--n 15] [--json FILE]        -> id | title | channel | seconds | views (also appended to FILE as JSON lines,
+                                                  so the list can go straight into STUDY.md / TODO R0)
   get ID [ID ...] --out DIR [--height 720]     -> downloads video + English auto-captions, writes ID.transcript.txt
                                                   and frame sheets every --every seconds (default 20) via frames.py
 If YouTube asks to "confirm you're not a bot", this script stops and says so. Do not try to get around it: report it,
@@ -18,7 +19,7 @@ def need_ytdlp():
         sys.exit("yt-dlp missing. Install: pip install -U yt-dlp  (then open a new shell)")
 
 
-def search(q, n):
+def search(q, n, out=None):
     r = subprocess.run(["yt-dlp", "--flat-playlist", "-j", f"ytsearch{n}:{q}"], capture_output=True, text=True)
     if "not a bot" in r.stderr:
         sys.exit("YouTube bot check: stop here and report it (don't work around it).")
@@ -28,6 +29,11 @@ def search(q, n):
         except ValueError:
             continue
         print(f"{d.get('id')} | {str(d.get('title'))[:80]} | {d.get('channel')} | {d.get('duration')} s | {d.get('view_count')}")
+        if out:
+            with open(out, "a", encoding="utf-8") as f:
+                f.write(json.dumps({"query": q, "id": d.get("id"), "title": d.get("title"), "channel": d.get("channel"),
+                                    "seconds": d.get("duration"), "views": d.get("view_count"),
+                                    "url": f"https://www.youtube.com/watch?v={d.get('id')}"}) + "\n")
 
 
 def vtt_to_text(path):
@@ -71,12 +77,12 @@ def main():
     need_ytdlp()
     ap = argparse.ArgumentParser()
     sub = ap.add_subparsers(dest="cmd", required=True)
-    p = sub.add_parser("search"); p.add_argument("query"); p.add_argument("--n", type=int, default=15)
+    p = sub.add_parser("search"); p.add_argument("query"); p.add_argument("--n", type=int, default=15); p.add_argument("--json")
     p = sub.add_parser("get"); p.add_argument("ids", nargs="+"); p.add_argument("--out", required=True)
     p.add_argument("--height", type=int, default=720); p.add_argument("--every", type=float, default=20)
     a = ap.parse_args()
     if a.cmd == "search":
-        search(a.query, a.n)
+        search(a.query, a.n, a.json)
     else:
         get(a.ids, a.out, a.height, a.every)
 

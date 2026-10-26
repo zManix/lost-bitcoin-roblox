@@ -6,7 +6,7 @@ Usage:
 
 Writes into <dir>:
   app.json, summary.md, description.txt, screenshots/sNN.jpg, trailers/tN.mp4 (needs ffmpeg),
-  extras/xN.mp4 (gif-style clips from the description), reviews_*.json (if the API answers),
+  extras/xN.mp4 (gif-style clips from the description; may include promos/other games: skim first), reviews_*.json (if the API answers),
   REVIEW_PAGES.txt (community review URLs to read with WebFetch).
 Standard library only (+ ffmpeg/ffprobe on PATH for trailers).
 """
@@ -137,16 +137,20 @@ def main():
             print(f"Saved {len(clips)} store clips -> {edir}")
 
     for kind in ("negative", "positive"):
-        try:
-            t, ctype = get(f"https://store.steampowered.com/appreviews/{appid}?json=1&filter=all&review_type={kind}"
-                           f"&num_per_page=50&language=english&purchase_type=all")
-            if "json" in ctype or t.strip().startswith("{"):
-                open(os.path.join(a.out, f"reviews_{kind}.json"), "w", encoding="utf-8").write(t)
-                print(f"Saved reviews_{kind}.json")
-            else:
-                print(f"Reviews API returned HTML for {kind} (region redirect). Use REVIEW_PAGES.txt with WebFetch.")
-        except Exception as e:  # noqa: BLE001
-            print(f"Reviews API failed ({kind}): {e}")
+        saved = False
+        for flt in ("all", "recent"):
+            try:
+                t, ctype = get(f"https://store.steampowered.com/appreviews/{appid}?json=1&filter={flt}&review_type={kind}"
+                               f"&num_per_page=50&language=english&purchase_type=all&cc=us&l=english")
+                if "json" in ctype or t.strip().startswith("{"):
+                    open(os.path.join(a.out, f"reviews_{kind}.json"), "w", encoding="utf-8").write(t)
+                    print(f"Saved reviews_{kind}.json (filter={flt})")
+                    saved = True
+                    break
+            except Exception as e:  # noqa: BLE001
+                print(f"Reviews API failed ({kind}, {flt}): {e}")
+        if not saved:
+            print(f"Reviews API gave no JSON for {kind} (common; region redirect). Use REVIEW_PAGES.txt with WebFetch.")
     open(os.path.join(a.out, "REVIEW_PAGES.txt"), "w").write(
         f"https://steamcommunity.com/app/{appid}/negativereviews/?browsefilter=toprated&filterLanguage=english\n"
         f"https://steamcommunity.com/app/{appid}/positivereviews/?browsefilter=toprated&filterLanguage=english\n"

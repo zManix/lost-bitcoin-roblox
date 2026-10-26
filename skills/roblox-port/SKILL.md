@@ -54,9 +54,15 @@ start it), a concept idea of their own.
 - the research docs at the root (STUDY.md, MARKET.md, VERDICT.md)
 - `kit\` (the build folder that gets launched)
 
-On non-Windows or when unsure, use `~/RobloxPorts/<slug>/`.
+On non-Windows or when unsure, use `~/RobloxPorts/<slug>/`. Slug = the game's name in lowercase, with hyphens
+and no symbols (e.g. "find-the-box").
 
-The scripts live in this skill's `scripts/` folder; call them as `python "<skill-dir>/scripts/<name>.py" ...`.
+Run commands from the workspace and call scripts by absolute path: `python "<skill-dir>/scripts/<name>.py" ...` (on
+Linux/macOS use `python3`). In the playbooks, `scripts/x.py` means that absolute path.
+
+**Subagents:** Phases 1, 4 and 6 spawn subagents (Agent/Task tool) for independent research and review. If no subagent
+tool is available, do the work yourself, and run the review as a separate hostile pass labeled "self-review (not
+independent)" (verdict_and_review.md §3).
 
 ---
 
@@ -83,8 +89,9 @@ Status line: "Studied <game>: <N> trailers, <N> frames read, <N> videos. The cor
 
 ## Phase 2: Roblox market check
 Follow **references/market_playbook.md**:
-1. `scripts/roblox_market.py charts`: what's rising.
-2. 40+ searches in 5 families (`search ... --json research/market_search.json`).
+1. `scripts/roblox_market.py charts`: what's rising (note event-week skew).
+2. 40+ searches in 6 families (`search ... --enrich --json research/market_search.json`). Family 6
+   (shelter/base nouns + trending character names) catches what the others miss.
 3. `details`, `votes`, `passes` on close matches and lane leaders; RoWatcher pages for peaks/trends.
 4. Write **MARKET.md**.
 
@@ -108,6 +115,9 @@ Spawn a fresh reviewer subagent with the brief in verdict_and_review.md §3. **V
 one more review round. Apply surviving fixes. Update VERDICT.md "Review rounds".
 
 ## Phase 5: Checkpoint with the user (one message)
+**Research-only runs:** show only the verdict block (pitch, score table, total, risks, name, Roblox layer), list the
+files written, and stop. No keys, no Studio prep.
+
 Show:
 - the verdict (pitch, score table, honest total, the top 3 risks)
 - the name
@@ -117,8 +127,6 @@ Then ask in ONE message:
 1. "Go / change something?"
 2. Only the MISSING keys (from check_env.py), with where to get each (references/launch_windows.md "Keys").
 3. The Studio prep: "File → New → Baseplate, then File → Publish to Roblox → '<NAME>', Private. Tell me when done."
-
-If the user said "research only", stop here and hand over the docs.
 
 When they answer:
 - store the keys with `setx` (never echo them)
@@ -176,6 +184,7 @@ problem), and offer a targeted follow-up run with a narrower TODO.
 | references/blender_pipeline.md | Phase 6: copy into the kit; fill §H |
 | references/launch_windows.md | Phases 0, 5, 7, 8: preflight, keys, Studio prep, launch, troubleshooting |
 | assets/kit/ | START_PROMPT.md, TODO.template.md, .claude/ stop hook + settings |
+| references/examples/ | a gold-standard SPEC + TECH_NOTES (Find the Glowing Box) and an honest VERDICT (Dome Keeper) |
 
 ## Scripts (tested)
 | Script | Does |

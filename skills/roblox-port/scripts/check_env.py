@@ -45,7 +45,7 @@ def main():
         except Exception:  # noqa: BLE001
             mcp = ""
     rows.append(("MCP: Roblox Studio", "OK" if "roblox" in mcp else "CHECK", "" if "roblox" in mcp else
-                 "Studio → enable the built-in MCP server; then: claude mcp add Roblox_Studio -- cmd.exe /c %LOCALAPPDATA%\\Roblox\\mcp.bat"))
+                 "Studio → enable the built-in MCP server; then: claude mcp add Roblox_Studio -s user -- cmd.exe /c %LOCALAPPDATA%\\Roblox\\mcp.bat"))
     rows.append(("MCP: Blender", "OK" if "blender" in mcp else "CHECK", "" if "blender" in mcp else
                  "claude mcp add blender -s user -- uvx mcp-for-blender  (and enable the add-on inside Blender)"))
     for k in KEYS:
@@ -54,6 +54,7 @@ def main():
     w = max(len(r[0]) for r in rows)
     for name, status, fix in rows:
         print(f"{name:<{w}}  {status:<8} {fix}")
+    print("\nResearch-only runs need just python, ffmpeg/ffprobe and (optionally) yt-dlp. MCPs + keys are only needed to build/launch.")
 
 
 if __name__ == "__main__":
