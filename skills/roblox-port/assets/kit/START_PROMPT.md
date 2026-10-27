@@ -1,4 +1,4 @@
-You are building the Roblox game {{GAME_NAME}} completely, in one long autonomous run of AT LEAST {{HOURS}} HOURS.
+You are building the Roblox game {{GAME_NAME}} completely and thoroughly, in one long autonomous run (safety cap {{HOURS}} hours).
 Roblox Studio has a new place open (published privately as "{{GAME_NAME}}"). Everything you need is in this folder.
 Read these in order before doing anything else:
 
@@ -18,9 +18,11 @@ A previous 10-hour build passed 771 tests and the owner called it "ugly and bori
 - REUSE: {{REUSE_LINE}}
 
 ## How this run works
-- A Stop hook (.claude/hooks/keep-working.js) will NOT let you end your turn until {{HOURS}} hours have passed AND
-  TODO.md has no open "[ ]" items (except lines tagged [HUMAN]) AND FINAL_REPORT.md exists. Never end a turn to check
-  in, summarize or ask a question. The owner is asleep.
+- A Stop hook (.claude/hooks/keep-working.js) won't let you end your turn while TODO.md has open "[ ]" items (except
+  [HUMAN]) or FINAL_REPORT.md is missing. The point is THOROUGHNESS, not hours: do every item properly, with its DONE WHEN
+  proven (evidence in PROGRESS.md), instead of stopping early and sloppy. Never invent filler work to fill time. Safety
+  cap: {{HOURS}} hours. If you are only waiting for the owner, say so once and stop (the hook allows it after 3 idle tries).
+  Never end a turn just to check in or ask a question: the owner is away.
 - State lives in files:
   - TODO.md: mark [x] only when DONE WHEN passes; add every bug and polish idea you find.
   - PROGRESS.md: a timestamped line after every step.
@@ -28,8 +30,9 @@ A previous 10-hour build passed 771 tests and the owner called it "ugly and bori
   - The ServerStorage BuildLog and the live_src\ mirror of every script.
 - After any context compaction or restart: re-read TODO.md, the last 30 lines of PROGRESS.md, the SPEC QA sections,
   STYLE_NOTES.md and TECH_NOTES.md before continuing.
-- If the milestones are done early, you are NOT done: polish passes, then the backlog, then playtest again and add
-  everything you find. Use every hour.
+- Finishing the milestones isn't "done": do the polish passes (P1–P10) and fix everything they find. Backlog items
+  are optional: do them only if they clearly improve the game. When the TODO is genuinely complete, write the report and
+  stop; finishing early with quality is a success.
 
 ## Keys and tools (never print, log or commit secrets)
 - Gemini images: env var GEMINI_API_KEY → write tools\gen_image.js against generativelanguage.googleapis.com, using
@@ -65,7 +68,7 @@ A previous 10-hour build passed 771 tests and the owner called it "ugly and bori
 ## Order
 1. `node .claude/hooks/keep-working.js --init`, create PROGRESS.md, lock the Studio.
 2. TODO.md top to bottom. The early tech milestone (the hardest system) must pass its tests before you build on it.
-3. At the very end ({{HOURS}}+ hours, nothing left you can do alone): run every test + a final VISUAL_QA sweep, then
+3. At the end (every TODO item done, nothing left you can do alone): run every test + a final VISUAL_QA sweep, then
    FINAL_REPORT.md containing:
    - what was built
    - a numbered owner TEST CHECKLIST (phone, controller, friends/party, save + rejoin, every pass)

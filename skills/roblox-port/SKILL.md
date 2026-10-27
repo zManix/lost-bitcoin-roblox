@@ -1,7 +1,7 @@
 ---
 name: roblox-port
 description: >-
-  Turn any game (Steam link, store page or name) into a researched Roblox game and launch a 10-hour autonomous build
+  Turn any game (Steam link, store page or name) into a researched Roblox game and launch a long, thorough autonomous build
   in Roblox Studio. Studies the source deeply (store data, screenshots, trailers frame by frame, gameplay videos,
   reviews), checks the live Roblox market via Roblox's APIs (rising charts, 40+ clone searches, peaks, like ratios,
   proven pass prices), gives an honest verdict, runs adversarial reviewers and pivots if the idea is dead, then writes
@@ -11,7 +11,7 @@ description: >-
   game would work on Roblox, wants a one-shot/master build prompt for a Roblox game, or types /roblox-port.
 ---
 
-# roblox-port: game → research → verdict → build kit → 10-hour Roblox build
+# roblox-port: game → research → verdict → build kit → thorough autonomous Roblox build
 
 You run the whole pipeline the user would otherwise do over a long conversation:
 1. Study the source game.
@@ -30,7 +30,7 @@ start it), a concept idea of their own.
 - Be brutally honest. If the idea is weak on Roblox, say so and say why, with numbers. Never promise a 10/10: say what
   would make it real (shipping fast, weekly updates, juice, thumbnails).
 - Ask only for what you can't get yourself: missing keys (once, all together), the Studio prep click, the go/no-go
-  before a 10-hour launch. Everything else, decide with sensible defaults and mark guesses as [ESTIMATE] /
+  before a long build launch. Everything else, decide with sensible defaults and mark guesses as [ESTIMATE] /
   [ASSUMPTION].
 - Post a one-line status when a phase finishes, so the user can follow along.
 
@@ -155,7 +155,8 @@ Then validate:
 If the user said "no launch", stop here and tell them how to launch later (the launch command below).
 
 ## Phase 7: Launch
-`powershell -ExecutionPolicy Bypass -File scripts/launch.ps1 -KitDir "<ws>\kit" -Hours <H>` (default 10).
+`powershell -ExecutionPolicy Bypass -File scripts/launch.ps1 -KitDir "<ws>\kit" -MaxHours <H>` (default cap 8). The hook keeps the build going until every TODO item is
+truly done (thoroughness), stops on its own after 3 idle attempts, and never asks for filler work.
 
 Then tell the user exactly what to click in the new window, how to watch it, and how to stop it
 (references/launch_windows.md "Launch"). Keep this message under 10 lines.

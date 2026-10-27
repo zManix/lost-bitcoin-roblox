@@ -1,8 +1,8 @@
-# TODO: Find the Glowing Box (10+ hour build)
+# TODO: Find the Glowing Box (thorough build)
 Rules:
 - Check an item off ([x]) only when its DONE WHEN passes. Visual items also need VISUAL_QA avg ≥ 8 (spec §16).
 - Tag owner-only items [HUMAN].
-- The stop hook won't let you stop while any untagged "[ ]" remains, or before 10 hours.
+- The stop hook won't let you stop while any untagged "[ ]" remains. Be thorough, never pad with filler.
 
 ## Research first
 - [ ] R0 Video study: download the videos listed in FTB_STUDY.md §7 with yt-dlp (720p max, for private reference
@@ -67,7 +67,7 @@ Rules:
 - [ ] P9 Text pass: our own short lowercase lines, no typos
 - [ ] P10 Second balance pass + BalanceSim
 
-## POLISH BACKLOG (pull from here when the lists are empty and time remains)
+## POLISH BACKLOG (optional: only items that clearly improve the game; not required to finish)
 more Specials · more Box Buddies · more perks/spells · Hall decoration · ghost aura variety · leaderboard animations ·
 glove skin art · seed share UI · Daily countdown · accessibility (colorblind-safe bands, reduced motion) ·
 achievements/badges · Humongous size behind a flag · week-1 update content behind a disabled LiveEvent

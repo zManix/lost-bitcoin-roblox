@@ -36,9 +36,14 @@ Close other places. Tell me when done."
 - Then confirm with the Studio MCP (list studios) that the place is open; note the place/universe id in KEY_CHECK.md.
 
 ## Launch (Phase 7)
-`powershell -ExecutionPolicy Bypass -File <skill>/scripts/launch.ps1 -KitDir "<ws>\kit" -Hours 10`
+`powershell -ExecutionPolicy Bypass -File <skill>/scripts/launch.ps1 -KitDir "<ws>\kit" -MaxHours 8`
 - Opens a new cmd window in the kit folder running `claude --dangerously-skip-permissions` with "Read START_PROMPT.md
-  …". It loads the keys from the registry, sets CLAUDE_CODE_STOP_HOOK_BLOCK_CAP=1000, and disables sleep on AC.
+  …". It loads the keys from the registry, sets the MAX_HOURS cap, and disables sleep on AC.
+- The hook is about THOROUGHNESS, not hours: Claude can stop only when every TODO item is done + FINAL_REPORT.md exists
+  (or the cap, or STOP_NOW/PAUSE, or 3 idle stop attempts). Never raise CLAUDE_CODE_STOP_HOOK_BLOCK_CAP: a raised cap once
+  caused an endless "still paused" loop that burned the user's usage.
+- To pause and ask a question: create PAUSE in the kit folder, press Esc in the build window, ask. Delete PAUSE and say
+  "continue" to resume.
 - Tell the user, in plain words:
   1. In the NEW window: "trust this folder?" → Yes. The bypass warning → arrow keys to "Yes, I accept" (the default
      is No).

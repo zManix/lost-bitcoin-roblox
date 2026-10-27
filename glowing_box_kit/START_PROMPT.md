@@ -1,5 +1,5 @@
-You are building the Roblox game FIND THE GLOWING BOX (first person), completely, in one long autonomous run of AT
-LEAST 10 HOURS. Roblox Studio has a new place open (published privately as "Find the Glowing Box"). Everything you
+You are building the Roblox game FIND THE GLOWING BOX (first person), completely, thoroughly, in one long autonomous run
+(safety cap 8 hours). Roblox Studio has a new place open (published privately as "Find the Glowing Box"). Everything you
 need is in this folder. Read these in order before doing anything else:
 
 1. FIND_THE_GLOWING_BOX_SPEC.md: the design (source of truth)
@@ -18,9 +18,11 @@ The last 10-hour build passed 771 tests and the owner called it "ugly and boring
   hours go into the cube engine, the look and the feel.
 
 ## How this run works
-- A Stop hook (.claude/hooks/keep-working.js) will NOT let you end your turn until 10 hours have passed AND TODO.md has
-  no open "[ ]" items (except lines tagged [HUMAN]) AND FINAL_REPORT.md exists. Never end a turn to check in,
-  summarize or ask a question. The owner is asleep.
+- A Stop hook (.claude/hooks/keep-working.js) won't let you end your turn while TODO.md has open "[ ]" items (except
+  [HUMAN]) or FINAL_REPORT.md is missing. The point is THOROUGHNESS, not hours: do every item properly, with its DONE WHEN
+  proven (evidence in PROGRESS.md), instead of stopping early and sloppy. Never invent filler work to fill time. Safety
+  cap: 8 hours. If you are only waiting for the owner, say so once and stop (the hook allows it after 3 idle tries).
+  Never end a turn just to check in or ask a question: the owner is away.
 - State lives in files:
   - TODO.md: mark [x] only when DONE WHEN passes; add every bug and polish idea you find.
   - PROGRESS.md: a timestamped line after every step.
@@ -28,8 +30,8 @@ The last 10-hour build passed 771 tests and the owner called it "ugly and boring
   - The ServerStorage BuildLog and the live_src\ mirror of every script.
 - After any context compaction or restart: re-read TODO.md, the last 30 lines of PROGRESS.md, spec §16–§17,
   STYLE_NOTES.md and TECH_NOTES.md §1 before continuing.
-- If the milestones are done before 10 hours, you are NOT done: polish passes, then the backlog, then playtest again
-  and add everything you find. Use every hour.
+- Finishing the milestones isn't "done": do the polish passes and fix everything they find. Backlog items are
+  optional: do them only if they clearly improve the game. Finishing early with quality is a success.
 
 ## Keys and tools (never print, log or commit secrets)
 - Gemini images: env var GEMINI_API_KEY → tools\gen_image.js against generativelanguage.googleapis.com, using the
@@ -56,7 +58,7 @@ The last 10-hour build passed 771 tests and the owner called it "ugly and boring
 1. `node .claude/hooks/keep-working.js --init`, create PROGRESS.md, lock the Studio.
 2. TODO.md top to bottom: R0 → R1 → M0 … M24 → P1–P10 → backlog. M2 (the cube engine) is the biggest risk: prove it
    with CubeTest + PerfTest before building on it.
-3. At the very end (10+ hours, nothing left you can do alone): F1, then FINAL_REPORT.md (see TODO F2), whose last line
+3. At the end (every TODO item done, nothing left you can do alone): F1, then FINAL_REPORT.md (see TODO F2), whose last line
    is "SAVE NOW (Ctrl+S) + PUBLISH".
 
 Start now. Don't ask me anything. Keep going until the hook lets you stop.

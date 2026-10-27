@@ -1,8 +1,8 @@
 # Launches the long autonomous build in a NEW window, inside the kit folder (so the project Stop hook loads).
-# Usage: powershell -ExecutionPolicy Bypass -File launch.ps1 -KitDir "C:\Users\me\Desktop\RobloxPorts\my-game\kit" [-Hours 10]
+# Usage: powershell -ExecutionPolicy Bypass -File launch.ps1 -KitDir "C:\Users\me\Desktop\RobloxPorts\my-game\kit" [-MaxHours 8]
 param(
   [Parameter(Mandatory = $true)][string]$KitDir,
-  [int]$Hours = 10
+  [int]$MaxHours = 8
 )
 $ErrorActionPreference = "Stop"
 if (-not (Test-Path (Join-Path $KitDir "START_PROMPT.md"))) { throw "START_PROMPT.md not found in $KitDir" }
@@ -13,8 +13,9 @@ foreach ($k in @("GEMINI_API_KEY", "ROBLOX_API_KEY", "ROBLOX_USER_ID", "ROBLOX_G
   $v = [Environment]::GetEnvironmentVariable($k, "User")
   if ($v) { Set-Item -Path "Env:$k" -Value $v }
 }
-$env:CLAUDE_CODE_STOP_HOOK_BLOCK_CAP = "1000"
-$env:RUN_HOURS = "$Hours"
+# The kit's settings.json sets MIN_HOURS/MAX_HOURS; this overrides MAX_HOURS for this run. Do NOT raise
+# CLAUDE_CODE_STOP_HOOK_BLOCK_CAP: the default (8 idle blocks) prevents endless loops that burn usage.
+$env:MAX_HOURS = "$MaxHours"
 
 # Fresh clock for the hook.
 $state = Join-Path $KitDir ".claude\run_state.json"
@@ -25,4 +26,4 @@ powercfg /change standby-timeout-ac 0 | Out-Null
 
 $prompt = "Read START_PROMPT.md in this folder and follow it exactly, starting now."
 Start-Process cmd -WorkingDirectory $KitDir -ArgumentList '/k', "claude --dangerously-skip-permissions `"$prompt`""
-Write-Output "Launched in a new window: $KitDir ($Hours h). In that window answer YES to 'trust this folder' and pick 'Yes, I accept' on the bypass warning."
+Write-Output "Launched in a new window: $KitDir (cap $MaxHours h). In that window answer YES to 'trust this folder' and pick 'Yes, I accept' on the bypass warning."

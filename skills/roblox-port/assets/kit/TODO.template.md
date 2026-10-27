@@ -1,8 +1,8 @@
-# TODO: {{GAME_NAME}} ({{HOURS}}+ hour build)
+# TODO: {{GAME_NAME}} (thorough build)
 Rules:
 - Check an item off ([x]) only when its DONE WHEN passes. Visual items also need VISUAL_QA avg ≥ 8.
 - Tag owner-only items [HUMAN].
-- The stop hook won't let you stop while any untagged "[ ]" remains, or before {{HOURS}} hours.
+- The stop hook won't let you stop while any untagged "[ ]" remains. Be thorough, never pad with filler.
 
 ## Research first
 - [ ] R0 Video study: yt-dlp the videos in STUDY.md (720p, private reference). Extract frames every 3–20 s plus
@@ -46,7 +46,7 @@ Rules:
 - [ ] P9 Text pass: our own short lines, no typos
 - [ ] P10 Second balance pass + BalanceSim
 
-## POLISH BACKLOG (pull from here when the lists are empty and time remains)
+## POLISH BACKLOG (optional: only items that clearly improve the game; not required to finish)
 more content · more cosmetics · hub decoration · accessibility (colorblind-safe, reduced motion) · settings
 persistence · achievements/badges · week-1 update content behind a disabled LiveEvent
 
