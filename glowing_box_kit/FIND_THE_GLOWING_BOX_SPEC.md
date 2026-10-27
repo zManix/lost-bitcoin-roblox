@@ -317,7 +317,9 @@ At every milestone, play 3 real minutes (input simulation). Log in FUN_QA.md:
 - With 2+ clients: do ghosts and shared moments make it feel alive without distracting?
 
 ## 18. BALANCE TARGETS (BalanceSim proves them)
-- Standard · Normal · upgrades ON, average player: box in 15–25 min; a top player: about 6–9 min.
+- Standard · Normal · upgrades ON, average player (wanders, misreads hints): box in 15–25 min. A perfect method player
+  (dig straight, turn on "further") takes about 1–3 min: that's the skill ceiling and the Normal leaderboard, not a bug.
+  Hard (no hints) is the prestige board.
 - Pure Standard Normal: 30–45 min.
 - Card picks: about every 20–40 s for the first 5 minutes, then about every 60–90 s; a run ends at Lv 40–70
   (Standard).

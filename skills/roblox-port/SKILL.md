@@ -184,8 +184,9 @@ INVENTED-REMOVE).
 - Level-ups must BANK: never auto-open the card screen. Show "cards ×N"; the player opens it when they want. Tune the
   curve so mid-run levels come every 30–90 s, not every 5 s.
 - A hot/cold hint is useless if the player doesn't know the method. Teach it once ("dig straight. further? turn."),
-  update it on movement (not on a timer), and make it audible. Balance with a bot that plays the TAUGHT method, never
-  one that knows where the target is.
+  update it on movement (not on a timer), and make it audible. Balance with bots that never know where the target is: a
+  "typical player" bot (wanders, misreads) sets the time target; a perfect-method bot only sets the skill ceiling
+  (leaderboard speed). Never slow the core verb to make the perfect bot hit the average target.
 - Before designing hints, specials or the leveling pace, STUDY GAMEPLAY VIDEOS (not just the trailer) and write down
   how the original does them, with timestamps.
 
