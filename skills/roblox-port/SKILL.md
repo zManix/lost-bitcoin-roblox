@@ -172,6 +172,25 @@ Read FINAL_REPORT.md, VISUAL_QA.md and FUN_QA.md. Give an honest summary:
 If they say it's ugly or boring: diagnose with them (ugly = fixable with refs and assets; boring = a core-loop
 problem), and offer a targeted follow-up run with a narrower TODO.
 
+**Fidelity first.** When the user plays it, check that features you ADDED (not in the original) don't break the core.
+Real example: an invented "points to the box" spell and a closeness meter let the user find the box in 2 minutes,
+killing the game. Rule: anything not in the original must earn its place (genuinely better AND not weakening the core
+loop); otherwise remove it. Follow-up runs start with a FIDELITY_AUDIT.md (ORIGINAL / ROBLOX LAYER / INVENTED-GOOD /
+INVENTED-REMOVE).
+
+**Follow-up runs (keep them small to save the user's usage):**
+- Rename the old FINAL_REPORT.md to FINAL_REPORT_runN.md and delete `.claude/run_state.json`.
+- Add a "## Run N" section to TODO.md with 3–8 items, each with a DONE WHEN. No "polish until hours are used" items.
+- Optionally lower MAX_HOURS in `.claude/settings.json` (e.g. "3").
+- To pause mid-run: create PAUSE in the kit folder, press Esc, ask. Delete PAUSE and say "continue" to resume.
+
+**Quick finish-up prompt** (when the user exits early and wants it wrapped up fast):
+"FINISH-UP ONLY, ~20 minutes, no new features. Read TODO.md, the last 40 lines of PROGRESS.md, FINAL_REPORT.md. Mark
+any filler/optional items [x] with 'skipped (optional)'. If code changed since the last full test, run the test
+suite + OverlapCheck once. Save the place (Ctrl+S, confirm with a screenshot). Make sure FINAL_REPORT.md covers this
+run (changes, test results, owner checklist, [HUMAN] items, last line 'SAVE NOW (Ctrl+S) + PUBLISH'). Then give me a
+10-line summary and stop."
+
 ---
 
 ## Reference files (read when you reach that phase)
