@@ -120,11 +120,11 @@ their ghosts drifting through the rock. Race them, or just relax."
 
 ## 7. LEVEL-UP CARDS (the heart of the roguelite)
 - Tokens: 1 per block × band multiplier (B1 1.0 → B5 1.6), Specials 50–300, Token Geodes 400–1,200.
-  need(L) = round(10 × 1.09^(L-1)) [ESTIMATE; BalanceSim tunes]. Lv 1 within 15 s.
+  need(L) = round(10 × 1.09^(L-1)) [ESTIMATE; BalanceSim tunes]. Lv 1 within 15 s. Mid-run levels every 30–90 s.
+- Level-ups BANK: a pulsing "cards ×N" pill; the player opens the screen (Tab / tap / gamepad Y). Never auto-open.
 - LEVEL UP: a whoosh + 0.3 s local time-slow (visual only); the screen blurs and darkens behind; the title
   "L E V E L  U P !" and "level 27 · pick one" appear; 3 cards rise in with a staggered 0.08 s spring and a rarity glow.
-  The world keeps running (multiplayer), which is fine because nothing can hurt you. Auto-pick the left card after
-  25 s.
+  The world keeps running (multiplayer), which is fine because nothing can hurt you. No auto-pick; a "later" button.
 - Card anatomy:
   - top: "DEPTH I/II/III" with dash ornaments
   - a category dot + label
@@ -201,12 +201,14 @@ you slowly). Visual cap: max 8 companion models rendered per player; the rest ar
     | handless clock | "it stopped asking what time it is." |
     | goldfish bowl | "he has seen things." |
 
-    Each gives tokens + a free card pick + an Index entry.
+    Punch the prop to claim (tooltip "<name> · punch to claim"): it lights up, the line types out, a pop shows
+    "+N tokens · free card" + an Index entry; it stays lit.
   - **TOKEN GEODE:** a crystal block that bursts 400–1,200 tokens ("a pocket of shine. crack it.").
   - **CARD CACHE:** a chest that gives one Epic+ card pick.
   - **GOLD VEIN:** 6–10 golden blocks in a line (×5 tokens).
 - Hints (Normal):
-  - the top chip compares your distance to the box every 3 s → "closer" / "further"
+  - the top chip compares your distance to the box after every ≥ 2 blocks moved → "closer" (warm chime) / "further"
+    (low tone); taught once: "dig straight. when it says further, turn."
   - "special · 9 m" + an arrow when a Special is within 12 blocks
   - Hard: nothing
 - BOX FOUND (make this give goosebumps):

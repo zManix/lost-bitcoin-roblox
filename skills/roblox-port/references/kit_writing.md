@@ -42,9 +42,10 @@ placement, juice timings, QA loops.
    - VFX
    - UI style (panel colors, fonts, accents)
 6. **HUD:** exact placement of every element on PC and mobile.
-7. **Progression systems:** cards/skills/upgrades with FULL lists (names, categories, effect per level, cooldowns,
+7. **Progression systems** (level-ups bank as "cards ×N", never auto-open; target gap 30–90 s mid-run): cards/skills/upgrades with FULL lists (names, categories, effect per level, cooldowns,
    costs, odds), currencies and curves ([ESTIMATE] where guessed; BalanceSim tunes).
-8. **Content:** specials/secrets/bosses/events with our own names and lines.
+8. **Content:** specials/secrets/bosses/events with our own names and lines. For EACH: how the player uses it (verb +
+   prompt text), what it gives (shown as a pop), and what it looks like after use.
 9. **Meta progression:** permanent currency, unlocks, collection, daily, quests.
 10. **Leaderboards / social.**
 11. **Hub & flow:** spawn → first action in 2 taps.

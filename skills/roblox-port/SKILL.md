@@ -178,6 +178,17 @@ killing the game. Rule: anything not in the original must earn its place (genuin
 loop); otherwise remove it. Follow-up runs start with a FIDELITY_AUDIT.md (ORIGINAL / ROBLOX LAYER / INVENTED-GOOD /
 INVENTED-REMOVE).
 
+**Playtest lessons (real complaints from a 21-minute run that never found the box):**
+- Every interactive thing needs a VERB + an on-screen prompt + a visible reward ("punch to claim" → "+180 tokens ·
+  free card"). Unclear Specials that "can't be broken" read as bugs.
+- Level-ups must BANK: never auto-open the card screen. Show "cards ×N"; the player opens it when they want. Tune the
+  curve so mid-run levels come every 30–90 s, not every 5 s.
+- A hot/cold hint is useless if the player doesn't know the method. Teach it once ("dig straight. further? turn."),
+  update it on movement (not on a timer), and make it audible. Balance with a bot that plays the TAUGHT method, never
+  one that knows where the target is.
+- Before designing hints, specials or the leveling pace, STUDY GAMEPLAY VIDEOS (not just the trailer) and write down
+  how the original does them, with timestamps.
+
 **Follow-up runs (keep them small to save the user's usage):**
 - Rename the old FINAL_REPORT.md to FINAL_REPORT_runN.md and delete `.claude/run_state.json`.
 - Add a "## Run N" section to TODO.md with 3–8 items, each with a DONE WHEN. No "polish until hours are used" items.
