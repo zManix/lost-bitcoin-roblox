@@ -50,7 +50,13 @@ placement, juice timings, QA loops.
 10. **Leaderboards / social.**
 11. **Hub & flow:** spawn → first action in 2 taps.
 12. **Onboarding:** first 60 s, second by second.
-13. **Controls:** PC / mobile / console.
+13. **Controls:** PC / mobile / console. Mobile rules from a real phone test:
+    - the main action button (PUNCH/FIRE) must let you DRAG FROM IT TO LOOK while it keeps firing (mobile-shooter
+      style); players only have two thumbs
+    - the hotbar sits flush at the bottom (above the safe area), between the thumbstick and the action buttons, never
+      mid-screen
+    - no HUD element touches Roblox's top bar or your own menu button (≥ 8 px gap)
+    - Studio emulator passes are not proof: the owner's phone test is
 14. **Juice checklist:** every action's sound + particles + motion + timing.
 15. **Monetization table:** proven prices from MARKET.md; ranked modes ignore boosts; no paid random items; cosmetics
     others can see.
