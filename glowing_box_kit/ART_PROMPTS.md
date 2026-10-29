@@ -1,89 +1,104 @@
-# Front-page art prompts: Find the Glowing Box (v2: every image explains the game)
+# Front-page art prompts: Find the Glowing Box (v3: matched to the real Roblox front page)
 
-The game in one look: PUNCH blocks → of a GIANT CUBE → to find the hidden GLOWING BOX.
-Every image below shows all three: the cube made of blocks, fists/avatar punching blocks off, and the mint glowing box
-hidden inside. If a generated image is missing one of the three, throw it away.
+What the front page actually rewards (from the owner's screenshot, Oct 2026):
+- ONE huge object, close-up, filling the tile. No wide scenes.
+- BIG bold text on icons too: "0.01%", "INC", "30mins", "BRASS HELL". 1–3 words, chunky font, thick outline.
+- Real Roblox avatars with exaggerated faces (shocked, screaming), not "toy figures".
+- Instant-concept formats: "LEVEL 1 vs MAX LEVEL" splits, before → after with a big green arrow.
+- Max saturation, hard contrast, glowing edges, simple backgrounds.
 
-Use Gemini image (newest model). 1:1 for logo + icon, 16:9 for thumbnails. Make 4 of each, pick at phone size.
+v1/v2 were too cinematic and soft (candlelight, wide shots, small subjects). Thrown out.
 
-## Logo (wordmark + emblem; regenerate until every letter is right)
+Gemini: 1:1 for icons, 16:9 for thumbnails. Newest image model, 4 per prompt. If the text comes out garbled,
+regenerate once, then generate the same prompt with the text part removed and add the text yourself in
+Photopea/Canva: a chunky font (Lilita One or Luckiest Guy, free), white or yellow fill, a thick black outline, a slight
+tilt, a drop shadow.
+
+Style line at the end of every prompt:
+Glossy 3D render in the style of popular Roblox game thumbnails, Roblox avatar characters with blocky bodies and
+exaggerated cartoon faces, extreme saturation, hard contrast, strong glow and rim light, simple background, subject
+fills most of the frame, sharp and clean.
+
+## ICONS (pick 1, A/B test a second)
+
+### Icon A: "FIND THE BOX"
 ```
-A game logo. Top: an emblem of a big pink boxing-glove fist punching into a cube made of small chunky blocks; the
-blocks burst away where it hits, and through the hole a small box glows bright mint-green inside the cube. Below the
-emblem, the title reading exactly "FIND THE GLOWING BOX" in chunky rounded 3D letters: "FIND THE" small, "GLOWING BOX"
-big; warm cream letters with a thick dark-plum outline and a soft gold bevel; the mint glow from the box lights up the
-letters. Playful, toy-like, high contrast, readable at small size. Plain dark background, centered.
-```
-
-## Icon (512×512, no text)
-```
-Square game icon. A big pink boxing-glove fist in a purple sleeve punches into a giant cube made of hundreds of small
-chunky blocks in layers of brown, rose pink and gold. The punched blocks burst out as tumbling little cubes. Through
-the hole, deep inside the cube, a small box glows bright mint-green, beams of mint light shining out of the hole
-toward the viewer. The fist, the hole and the glowing box line up in the center. Stylized 3D render, chunky toy-like
-shapes, dark candlelit background, strong rim light, very high contrast, readable at tiny size. No text.
-```
-
-## Thumbnails (16:9). Every prompt ends with the same style line:
-Stylized 3D render in a Roblox-like blocky toy style, bright saturated colors, soft warm candlelight plus strong rim
-light, clean silhouettes, 16:9, no text, no logos.
-
-### 1. The hero: a giant cube, one tiny player, one hidden box
-```
-A gigantic cube made of a million small chunky blocks fills the frame, standing in a cozy candlelit hall with hundreds
-of tiny candles. Part of the cube is see-through like glass, revealing a single small box glowing bright mint-green
-hidden deep in the middle. At the foot of the cube, a tiny cheerful blocky toy avatar with big pink boxing gloves
-punches the first blocks, which burst off as little tumbling cubes. A few soft glowing friendly ghost players dig
-their own tunnels in the cube's sides. Low camera angle so the cube feels enormous and the box feels far away.
-Stylized 3D render in a Roblox-like blocky toy style, bright saturated colors, soft warm candlelight plus strong rim
-light, clean silhouettes, 16:9, no text, no logos.
+Square game icon. A wall of chunky pink and gold blocks fills the background. In the center, a Roblox avatar's fist in
+a big pink boxing glove smashes through the wall, blocks exploding outward, and behind the hole a box glows blinding
+mint-green with light rays bursting out. At the top, huge bold text "FIND THE BOX" in a chunky font, white letters
+with a thick black outline, slightly tilted. Glossy 3D render in the style of popular Roblox game thumbnails, extreme
+saturation, hard contrast, strong glow and rim light, sharp and clean.
 ```
 
-### 2. The cross-section: tunnels racing to the box
+### Icon B: "1 IN A MILLION"
 ```
-A giant block cube cut in half like a layer cake, showing colored layers from top to bottom: warm brown, rose pink,
-gold, sky blue, mint. Tunnels are punched down through the layers; in each tunnel a tiny blocky toy avatar with pink
-boxing gloves punches blocks that burst away. In the exact center a small box glows bright mint-green, lighting up the
-blocks around it. One avatar's tunnel is only a few blocks away from it. Clean side view, candlelit hall behind.
-Stylized 3D render in a Roblox-like blocky toy style, bright saturated colors, soft warm candlelight plus strong rim
-light, clean silhouettes, 16:9, no text, no logos.
-```
-
-### 3. First person: punching through the last block
-```
-First-person view inside a rose-pink block tunnel: two big pink boxing-glove fists in purple sleeves punch the wall,
-blocks exploding toward the camera as tumbling little cubes with golden coins. Through the freshly punched hole,
-right ahead, a small room of mint glowing tiles with a box glowing bright mint-green, light pouring into the tunnel
-and over the fists. The feeling: one more punch and you've found it. Stylized 3D render in a Roblox-like blocky toy
-style, bright saturated colors, soft warm candlelight plus strong rim light, clean silhouettes, 16:9, no text, no logos.
+Square game icon. Close-up of a shocked Roblox avatar (blocky head, wide eyes, open mouth) holding up a small box that
+glows blinding mint-green, light rays bursting from it onto their face. Behind them, a giant wall of tiny chunky
+blocks stretching into the distance. At the top, huge bold text "1 IN A MILLION" in a chunky font, yellow letters with
+a thick black outline. Glossy 3D render in the style of popular Roblox game thumbnails, extreme saturation, hard
+contrast, strong glow and rim light, sharp and clean.
 ```
 
-### 4. One block away (the viewer sees it, the player doesn't)
+## THUMBNAILS (16:9)
+
+### 1. LEVEL 1 vs MAX LEVEL (the proven split)
 ```
-Side cut-away view of a narrow tunnel punched into a giant block cube. On the left, a blocky toy avatar with big pink
-boxing gloves punches the wall, blocks flying, looking the wrong way with a confused face. On the right, just ONE
-block behind the wall, a box glows bright mint-green, its light leaking through the cracks between the blocks. Gold
-and rose block layers around them, a dark tunnel against the bright mint glow. Stylized 3D render in a Roblox-like
-blocky toy style, bright saturated colors, soft warm candlelight plus strong rim light, clean silhouettes, 16:9, no
-text, no logos.
+A split image with a hard diagonal line down the middle. LEFT side, dull blue-grey: a sad Roblox avatar weakly punching
+one single block with a small pink boxing glove, a tiny crack. Big bold text "LEVEL 1" at the top left. RIGHT side,
+exploding with color: a hyped Roblox avatar with glowing golden boxing gloves blasting hundreds of blocks apart at
+once, bombs bursting, little mole helpers drilling, gold coins flying everywhere, a mint-green glowing box revealed in
+the blast. Big bold text "MAX LEVEL" at the top right. Chunky font, white letters, thick black outline. Glossy 3D render
+in the style of popular Roblox game thumbnails, Roblox avatar characters with blocky bodies and exaggerated cartoon
+faces, extreme saturation, hard contrast, strong glow and rim light, simple background, subject fills most of the
+frame, sharp and clean.
 ```
 
-### 5. The win: found it
+### 2. 1,000,000 BLOCKS, 1 BOX
 ```
-Inside a giant block cube, at the end of a long punched tunnel, a cheerful blocky toy avatar with big pink boxing
-gloves and a huge amazed, happy face holds up a box glowing bright mint-green inside a small room of mint glowing
-tiles. Broken blocks lie around their feet, the tunnel they punched stretches back behind them, light beams burst
-from the box, confetti in pink, gold, blue and mint rains down. Close-up on the face and the box. Stylized 3D render in
-a Roblox-like blocky toy style, bright saturated colors, soft warm candlelight plus strong rim light, clean
-silhouettes, 16:9, no text, no logos.
+A tiny shocked Roblox avatar in the bottom left corner looks up at a GIANT cube made of a million small chunky colorful
+blocks that fills the whole image. The cube is see-through in the middle, showing one small box glowing blinding
+mint-green deep inside, with a big red circle drawn around it. Big bold text "1,000,000 BLOCKS" across the top and
+"1 BOX" next to the red circle. Chunky font, white letters, thick black outline. Glossy 3D render in the style of
+popular Roblox game thumbnails, Roblox avatar characters with blocky bodies and exaggerated cartoon faces, extreme
+saturation, hard contrast, strong glow and rim light, simple background, subject fills most of the frame, sharp and
+clean.
 ```
 
-## Use them right
-- Thumbnail order: 1, 4, 2, 3, 5.
-- The 1-second test: show each image to someone for 1 second, then ask "what do you do in this game?" The answer
-  must be "punch blocks to find a glowing box". If not, it's the wrong image.
-- Optional text on thumbnails: add it yourself in Canva/Photopea, short ("FIND THE BOX", "1 IN A MILLION"). Never on
-  the icon.
-- Icon A/B: test this icon vs the logo's emblem cropped square (Creator Dashboard experiment if you have it; else swap
-  weekly and compare click-through rate).
-- Check every image: no extra fingers, no garbled letters, no real brands, nothing scary.
+### 3. 1 BLOCK AWAY
+```
+Side cut-away view of a tunnel inside a wall of chunky pink blocks. On the left, a frustrated Roblox avatar with pink
+boxing gloves punches the wall, looking the wrong way. On the right, just ONE block behind the wall, a box glows
+blinding mint-green, light leaking through the cracks. A huge curved red arrow points from the avatar to the box. Big
+bold text "1 BLOCK AWAY!" at the top in a chunky font, yellow letters, thick black outline. Glossy 3D render in the
+style of popular Roblox game thumbnails, Roblox avatar characters with blocky bodies and exaggerated cartoon faces,
+extreme saturation, hard contrast, strong glow and rim light, simple background, subject fills most of the frame,
+sharp and clean.
+```
+
+### 4. BEFORE → AFTER
+```
+Two images side by side with a huge bright green arrow between them pointing right. LEFT: a perfect solid cube of
+chunky colorful blocks with a small Roblox avatar with pink boxing gloves standing on top. RIGHT: the same cube full
+of punched tunnels like swiss cheese, blocks and gold coins flying, and in the center a box glowing blinding
+mint-green with the avatar holding it up and cheering. Glossy 3D render in the style of popular Roblox game
+thumbnails, Roblox avatar characters with blocky bodies and exaggerated cartoon faces, extreme saturation, hard
+contrast, strong glow and rim light, simple background, subject fills most of the frame, sharp and clean.
+```
+
+### 5. I FOUND IT!
+```
+Extreme close-up of a Roblox avatar screaming with joy (blocky head, huge open mouth, wide eyes), holding a box that
+glows blinding mint-green right in front of the camera, light rays blasting from it, confetti and gold coins exploding
+all around, broken chunky blocks in the background. Big bold text "I FOUND IT!" in a chunky font, yellow letters, thick
+black outline. Glossy 3D render in the style of popular Roblox game thumbnails, Roblox avatar characters with blocky
+bodies and exaggerated cartoon faces, extreme saturation, hard contrast, strong glow and rim light, simple background,
+subject fills most of the frame, sharp and clean.
+```
+
+## Rules
+- Thumbnail order: 1, 2, 3, 4, 5. Icon: A first, B as the A/B test.
+- Test at real size: shrink the icon to 150 px next to a screenshot of the front page. If you can't read the text or
+  see the glowing box, it fails.
+- Honest text only: no "FREE ROBUX", no "like for…", nothing the game doesn't have (Roblox moderates misleading
+  thumbnails).
+- No scary stuff (the game is cozy), no real brands, no copied art from other games.
