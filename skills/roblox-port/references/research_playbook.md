@@ -40,6 +40,15 @@ build once (771 tests passed, the owner hated it). Depth here is what prevents t
   removes it for the rest of the run", "DEPTH II", "RISKS" tabs). We copy the SYSTEMS, never the names/text.
 
 ## 3. Gameplay videos (scripts/yt_study.py) — run on the user's PC
+Get 10–20 videos, at least one of each type (search each type separately):
+- **first hour** of a new player ("<title> first time", "part 1"): onboarding, tutorial text, the first unlocks
+- **full playthrough / longplay**: the whole progression and pacing
+- **endgame / 100% / final boss**: late systems, max upgrades, what "done" looks like
+- **speedrun / high skill** (speedrun.com links): the movement ceiling, tech, exact timings
+- **guides / tips / "everything you need to know"**: the hidden rules, best builds, numbers people quote
+- **reviews / critiques**: what's loved and hated
+- **devlogs, trailers, GDC/interviews**: the intent behind the design
+Per video, note timestamps for every system, screen and moment. Read captions for numbers and terms.
 - `python "<skill-dir>/scripts/yt_study.py" search "<exact game title> gameplay" --n 15 --json <ws>/research/videos.jsonl` (also try the title alone, the title +
   "steam", the developer name, the title in Japanese/Korean if it's popular there). Pick 3–6 videos: the longest
   playthroughs, the most viewed, and the developer's own channel.
@@ -52,6 +61,27 @@ build once (771 tests passed, the owner hated it). Depth here is what prevents t
   (b) lean harder on review text and the trailers' 10-fps strips
   (c) mark animation timings as [ESTIMATE]
   (d) optionally tell the user they can drop video files into <ws>/research/videos and you'll study them.
+
+## 3b. Wikis and written sources (the exact numbers live here)
+WebSearch + WebFetch, and save what you read to <ws>/research/wiki/ (source URL at the top of each file):
+- the game's wiki: "<title> wiki" (wiki.gg, Fandom, an official wiki). Read EVERY page on mechanics, items/upgrades,
+  abilities, enemies/obstacles, levels/worlds, currencies, shops, achievements and patch history.
+- Steam: the community guides (steamcommunity.com/app/<appid>/guides, highest rated first), the achievements list
+  (steamcommunity.com/stats/<appid>/achievements: it lists every system and goal), the news/patch notes
+  (balance numbers change there), the discussions (FAQ threads, "how does X work").
+- Reddit (r/<game>): "how does … work", tips, tier lists, datamined numbers.
+- speedrun.com (categories, rules, tech notes), dev interviews, GDC talks, the press kit.
+Record every number with its source. When sources disagree, prefer: patch notes > datamine > wiki > guides > videos.
+
+## 3c. Measure what nobody wrote down
+From the 10-fps strips, measure in frames (1 frame = 0.1 s) and in body heights / known object sizes:
+- movement: run speed, sprint/boost speed, acceleration time to top speed, air control, fall speed
+- jumps: height, airtime, double jump, coyote time if visible
+- the core action: wind-up, active, recovery; cooldowns
+- camera: FOV feel, shake on impact, follow distance
+- UI: transition durations, popup timings
+Convert to Roblox units (1 body height ≈ 5 studs) and mark [MEASURED]. Anything you can't measure or find is
+[ESTIMATE] and goes on the build agent's R0 list to measure from the videos itself.
 
 ## 4. Reviews and community
 - WebFetch the URLs in REVIEW_PAGES.txt (top-rated negative AND positive). Pull the top 5 loves and top 5 hates, with
@@ -82,7 +112,20 @@ Sections:
 6. Animation & juice timings (from the 10-fps strips)
 7. Loves / hates (quotes)
 8. Roblox translation decisions: keep / change / add
-9. Videos for the build agent (IDs, titles, lengths), so it can study them itself on the user's PC
+9. Videos for the build agent (IDs, titles, lengths, type, the timestamps that matter), so it can study them on the
+   user's PC
+10. Sources: every wiki/guide/patch page used, with URLs
+
+## 7. Write MECHANICS_BIBLE.md (the contract for an exact copy)
+One table per system (movement, core action, progression, economy, levels/runs, enemies/obstacles, UI flow, saves).
+Every row: mechanic | exact behavior | number(s) in source units and studs/seconds | source (wiki URL, video ID @
+timestamp, patch note) | [WIKI] / [MEASURED] / [ESTIMATE].
+Then:
+- a SCREEN FLOW: every screen from boot to the end of a run, in order, with what each button does
+- a FIRST 10 MINUTES script: second by second, what the original shows and teaches
+- an ORIGINAL-EXPRESSION list: every name, character, text and asset we must replace, with our replacement
+The build agent copies the bible's numbers into Config and must not change them without a playtest reason logged in
+FIDELITY_AUDIT.md.
 
 Also pick 15–30 reference images for `style_refs/` (store screenshots + full-res UI keyframes + 1–2 animation strips).
 Name them by what they show (ui_cards.jpg, hud_full.jpg, area_rose_tunnel.jpg, anim_punch_10fps.jpg).

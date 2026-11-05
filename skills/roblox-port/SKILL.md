@@ -35,8 +35,14 @@ start it), a concept idea of their own.
 - Post a one-line status when a phase finishes, so the user can follow along.
 
 ## Ground rules (why they exist)
-- **Mechanics, not assets.** Copy systems, layouts and mood. Never names, text, art, logos or story from the source.
-  This keeps the user safe from takedowns and moderation.
+- **Mechanically exact, legally original.** Copy EVERYTHING that makes the game play and feel the way it does, as
+  exactly as you can measure it: rules, systems, every number (speeds, jump heights, cooldowns, costs, curves, drop
+  rates), level/run structure, pacing, controls, camera, HUD layout and menu flow, animation and juice timings, and
+  the overall art direction (style, palette, lighting, mood). A player of the original should feel at home in 10
+  seconds. Never copy the protected parts: the game's and characters' names, character designs, story and dialogue,
+  UI/flavor text word for word, art/models/textures, music/SFX, logos. Those get the game DMCA'd off Roblox and strike
+  the user's account, which kills everything else. If the user asks for a "1:1 copy including assets", explain this in
+  one line and deliver the mechanically exact version.
 - **Content safety.** No skulls, blood, gore, robed/hooded figures, religious symbols, weapons aimed at
   people/creatures, text inside images, real brands. Roblox moderation is strict and strikes hit the user's account.
 - **No bot-check circumvention.** If YouTube or any site asks to "confirm you're not a bot", stop that source, say so,
@@ -80,12 +86,17 @@ Follow **references/research_playbook.md** exactly. In short:
    pages).
 2. `scripts/frames.py` to turn every screenshot and trailer into sheets you READ. Then full-res keyframes of every UI
    screen + HUD, and 10-fps strips of the core action, the level-up/reward and the big moment.
-3. `scripts/yt_study.py search` + `get` for 3–6 gameplay videos (frames + captions). Bot check = skip.
-4. Reviews (WebFetch the review pages) and web/press/devlog search.
-5. In parallel, spawn ONE general-purpose subagent for comparable games (sales, loves/hates, why they sold).
-6. Write **STUDY.md** (template in the playbook) and choose **15–30 style_refs**.
+3. `scripts/yt_study.py search` + `get` for 10–20 videos of every type in the playbook §3 (first hour, full
+   playthrough, endgame, speedrun, guides/tips, reviews, devlogs). Bot check = skip; the build agent's R0 gets them.
+4. WIKIS and written sources (playbook §3b): the game's wiki (wiki.gg / Fandom / official), Steam guides and
+   achievements, Reddit, patch notes, speedrun.com, dev interviews/talks. They give the exact numbers and systems.
+5. Reviews (WebFetch the review pages) and web/press/devlog search.
+6. In parallel, spawn ONE general-purpose subagent for comparable games (sales, loves/hates, why they sold).
+7. Write **STUDY.md** + **MECHANICS_BIBLE.md** (templates in the playbook) and choose **20–40 style_refs**. The bible
+   is the contract: every mechanic with its number, source and confidence.
 
-Status line: "Studied <game>: <N> trailers, <N> frames read, <N> videos. The core loop is …".
+Status line: "Studied <game>: <N> trailers, <N> frames read, <N> videos, <N> wiki/guide pages, <N> numbers
+measured. The core loop is …".
 
 ## Phase 2: Roblox market check
 Follow **references/market_playbook.md**:

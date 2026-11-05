@@ -9,6 +9,8 @@ Rules:
   10-fps strips of key moments, and read the captions. Write VIDEO_STUDY.md (systems, UI flows, timings, best
   moments, complaints). If blocked, note it and continue.
 - [ ] R1 STYLE_NOTES.md from every image in style_refs\ + STUDY.md (before any visual work)
+- [ ] R2 MECHANICS_BIBLE.md check: measure every [ESTIMATE] row from the videos (10-fps strips), update it, and put
+  every number into Config. DONE WHEN no movement/core-action row is still [ESTIMATE].
 
 ## Milestones (customize per game; risk order; each has a DONE WHEN)
 - [ ] M0 Setup:
@@ -35,6 +37,9 @@ Rules:
 - [ ] M? Final QA: every test, exploit fuzz, data kill-test
 
 ## Polish passes (all required)
+- [ ] P0 FIDELITY PASS: replay 10 moments from the videos (the first minute, the core action, a level/run, every UI
+  screen, the big moment) and screenshot the same moment in our game side by side (fidelity\<moment>.png). Score
+  1–10 for "does it play and feel like the original"; fix anything < 8. Check every MECHANICS_BIBLE number in Config.
 - [ ] P1 A full session on emulated phone as a new player: fix every friction; FUN_QA log
 - [ ] P2 An alternate mode/difficulty playthrough
 - [ ] P3 A multi-client session: the social layer feels alive, nothing interferes
