@@ -4,7 +4,7 @@ description: >-
   Turn any game (Steam link, store page or name) into a researched Roblox game and launch a long, thorough autonomous build
   in Roblox Studio. Studies the source deeply (store data, screenshots, trailers frame by frame, gameplay videos,
   reviews), checks the live Roblox market via Roblox's APIs (rising charts, 40+ clone searches, peaks, like ratios,
-  proven pass prices), gives an honest verdict, runs adversarial reviewers and pivots if the idea is dead, then writes
+  proven pass prices), gives an honest verdict and adversarial review, builds an EXACT gameplay copy by default, then writes
   a full build kit (spec, study, tech notes, Blender pipeline + assets, style refs, TODO, start prompt, a stop hook
   that keeps Claude working for hours), asks once for missing keys and launches it. Use whenever the user wants to
   port, copy, clone, remake or "make a Roblox version of" a game, pastes a game link and mentions Roblox, asks if a
@@ -35,14 +35,21 @@ start it), a concept idea of their own.
 - Post a one-line status when a phase finishes, so the user can follow along.
 
 ## Ground rules (why they exist)
+- **EXACT COPY IS THE DEFAULT. Don't remix, don't "improve", don't pivot.** The builds that turned out good were
+  near 1:1 copies of the source; the ones where Claude invented its own twist (Scrap a Junkyard) came out ugly and
+  boring, and an invented hint spell (Find the Glowing Box) broke the game. So the build target is the original game
+  itself: the same content structure (the same number of levels/worlds, items, abilities, enemies, upgrades, each
+  with an equivalent effect and the same numbers), the same run, the same feel and the same look. The verdict is
+  advice only: build the game the user picked, even if the score is low, unless the user asks to switch.
 - **Mechanically exact, legally original.** Copy EVERYTHING that makes the game play and feel the way it does, as
   exactly as you can measure it: rules, systems, every number (speeds, jump heights, cooldowns, costs, curves, drop
   rates), level/run structure, pacing, controls, camera, HUD layout and menu flow, animation and juice timings, and
   the overall art direction (style, palette, lighting, mood). A player of the original should feel at home in 10
   seconds. Never copy the protected parts: the game's and characters' names, character designs, story and dialogue,
   UI/flavor text word for word, art/models/textures, music/SFX, logos. Those get the game DMCA'd off Roblox and strike
-  the user's account, which kills everything else. If the user asks for a "1:1 copy including assets", explain this in
-  one line and deliver the mechanically exact version.
+  the user's account, which kills everything else. Make those parts new IN THE SAME STYLE from the first build: never
+  ripped or traced placeholders to "swap before publishing" (that step gets skipped and the game ships infringing). If
+  the user asks for a "1:1 copy including assets", explain this in one line and deliver the exact gameplay copy.
 - **Content safety.** No skulls, blood, gore, robed/hooded figures, religious symbols, weapons aimed at
   people/creatures, text inside images, real brands. Roblox moderation is strict and strikes hit the user's account.
 - **No bot-check circumvention.** If YouTube or any site asks to "confirm you're not a bot", stop that source, say so,
@@ -111,8 +118,9 @@ prices and policy. If it's more than about 60 days old, refresh the items marked
 
 ## Phase 3: Concept + verdict
 Follow **references/verdict_and_review.md** §1–2 and §4–5:
-- Choose: straight port, port + Roblox layer (most common), or pivot onto a rising formula.
-- Design the Roblox layer on purpose. Examples that worked in planning:
+- Default: STRAIGHT PORT (an exact gameplay copy). Pivot only if the user asks for it.
+- Roblox layer: optional and ADDITIVE only (other players in the same space, saves, leaderboards). It must never
+  change the solo game: a player who ignores everyone else plays exactly the original. Examples:
   - a solo game → a shared space where everyone digs their own private world in the same spot and sees the others
     as ghosts, plus shared big moments and an hourly live race
   - parties that share one world
@@ -122,8 +130,10 @@ Follow **references/verdict_and_review.md** §1–2 and §4–5:
 
 ## Phase 4: Adversarial review (always)
 Spawn a fresh reviewer subagent with the brief in verdict_and_review.md §3. **Verify its top claims yourself** with
-`roblox_market.py details`. If the concept is already shipped and dead, or a clearly better lane exists, pivot and run
-one more review round. Apply surviving fixes. Update VERDICT.md "Review rounds".
+`roblox_market.py details`. If the concept is already shipped and dead, or a clearly better lane exists, TELL the
+user (with numbers) at the checkpoint and keep the exact copy as the plan unless they choose to switch. Apply fixes
+that make it closer to the original or better on Roblox's platform (mobile controls, saves, performance); never fixes
+that change the game's design. Update VERDICT.md "Review rounds".
 
 ## Phase 5: Checkpoint with the user (one message)
 **Research-only runs:** show only the verdict block (pitch, score table, total, risks, name, Roblox layer), list the

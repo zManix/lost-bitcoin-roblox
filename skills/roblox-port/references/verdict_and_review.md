@@ -1,21 +1,21 @@
 # Phase 3–4 playbook: concept, verdict, adversarial review, pivots
 
 ## 1. Pick the concept
-Start from the source game. Then:
-1. **Straight port** (same mechanics, new name/art) when MARKET.md says the lane is open AND the loop is proven
-   (on Steam or Roblox).
-2. **Port + Roblox layer** (most common): keep the source's core loop and add what Roblox players need:
+Start from the source game. The DEFAULT is always 1 (the user's rule: exact copies are what came out good).
+1. **Straight port** (an exact gameplay copy: same content, numbers, feel and look; only the protected names, text,
+   characters and assets made new in the same style). Default, whatever MARKET.md says.
+2. **Port + Roblox layer**: the exact copy plus ADDITIVE Roblox features that never change the solo game:
    - friends in the same space
    - short sessions with saves
    - a daily reason to return
    - visible show-off cosmetics
    - a weekly-update-ready structure
-3. **Pivot** if the straight version already exists and died, or the idea doesn't pull: find the nearest RISING
+3. **Pivot** ONLY when the user asks for it (warn them with numbers if the straight version already died): find the nearest RISING
    Roblox formula whose skeleton matches the source game's verbs, and put the source's best mechanics on that skeleton.
 
    Real example: a junkyard digging game → its straight port was dead on Roblox twice → its loop matched "Chop A
    Forest" (rising, 52K live), so the pivot became "Scrap a Junkyard" on Chop's run structure with the source's
-   furnace and tool verbs.
+   furnace and tool verbs. (The result came out ugly and boring: one reason pivots are no longer the default.)
 
 ## 2. Score it with this rubric (out of 10; show the table)
 | Factor | What earns a high score |

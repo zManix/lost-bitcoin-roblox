@@ -22,9 +22,11 @@ Gold-standard example: references/examples/example_SPEC_find_the_glowing_box.md 
 example_TECH_NOTES_voxel_shared_space.md). Match that level of detail: full card/skill lists, palette hexes, HUD
 placement, juice timings, QA loops.
 
-0. **Why this game + what to protect:** the evidence, our edge, the lesson that LOOK + FEEL are graded first.
+0. **Why this game + what to protect:** EVERYTHING about how it plays, feels and looks (this is an exact copy); the
+   lesson that LOOK + FEEL are graded first.
 1. **Pitch:** 2–3 sentences a kid understands.
-2. **The Roblox layer:** how friends/other players fit, without breaking the source's core feel. Examples:
+2. **The Roblox layer (optional, additive only):** how friends/other players fit without changing the solo game at
+   all. Examples:
    - shared space with ghosts for a solo game
    - co-op parties
    - live events/races
